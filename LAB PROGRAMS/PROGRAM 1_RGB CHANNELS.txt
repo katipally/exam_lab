@@ -1,0 +1,31 @@
+% MATLAB code to display the red, green and blue
+% color planes of a color image
+	% read and display the image
+I = imread("C:\Users\admin\Pictures\R.png");
+figure(1);
+imshow(I);
+	% rows and columns in the image
+r = size(I, 1);
+c = size(I, 2);
+	% creating zero matrices
+R = zeros(r, c, 3);
+G = zeros(r, c, 3);
+B = zeros(r, c, 3);
+	% storing the corresponding color plane
+	% red plane
+R(:, :, 1) = I(:, :, 1);
+figure(2);
+imshow(R)  
+	% green plane
+G(:, :, 2) = I(:, :, 2);
+figure(3);
+imshow(G)    
+	% blue plane
+B(:, :, 3) = I(:, :, 3);
+figure(4);
+imshow(B);
+
+	% displaying the images
+figure, imshow(R);
+figure, imshow(G);
+figure, imshow(B);

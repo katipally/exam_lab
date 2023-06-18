@@ -1,0 +1,30 @@
+clear all;
+%image scaling using imresize
+I1 = imread("n1.jpg");
+%scaling an image using constant factor
+I2 = imresize(I1,0.5); %reduces image into half of its original size
+I3 = imresize(I1,1.5); %increases image into one and half times of its original size
+figure(1);
+imshow(I1);
+figure(2);
+imshow(I2);
+figure(3);
+imshow(I3);
+%scaling an image using predifined size
+I4 = imresize(I1,[100,100]); %creates an image of size [100*100]
+figure(4);
+imshow(I4);
+%Rotating an image using imrotate
+I5 = imrotate(I4,60); %rotates an image by 60 degree in anticlockwise direction
+I6 = imrotate(I4,-90); %rotates an image by 90 degree in clockwise direction
+I7 = imrotate(I4,180); %rotates an image by 180 degree in anticlockwise direction
+figure(5);
+imshow(5);
+figure(6);
+imshow(I6);
+figure(7);
+imshow(I7);
+%Translating an image using imtranslate
+I8 = imtranslate(I4,[50,50]);%Moves first 50 rows and column values
+figure(8);
+imshow(I8);

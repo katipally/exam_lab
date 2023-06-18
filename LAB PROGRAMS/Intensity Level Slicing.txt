@@ -1,0 +1,35 @@
+I = imread("n1.jpg");
+I = rgb2gray(I);
+I1 = double(I);
+[m,n] = size(I1);
+Max_Int = double(255);
+p = double(200);
+q = double(255);
+%Retaining the background and enhancing the pixels of interest 
+for i= 1:m
+    for j= 1:n
+        if (I1(i,j)>=p && I1(i,j)<=q)
+            c(i,j) = Max_Int;
+        else
+            c(i,j) = I1(i,j);
+        end
+    end
+end
+figure(1);
+imshow(I);
+figure(2);
+imshow(uint8(c));
+%Removing the background effect and enhancing the pixels of interest 
+for i= 1:m
+    for j= 1:n
+        if (I1(i,j)>=p && I1(i,j)<=q)
+            c(i,j) = Max_Int;
+        else
+            c(i,j) = 0;
+        end
+    end
+end
+figure(1);
+imshow(I);
+figure(2);
+imshow(uint8(c));

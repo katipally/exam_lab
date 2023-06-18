@@ -1,0 +1,45 @@
+% LOGICAL OPERATIONS ON IMAGES
+I1 = imread("n1.jpg");
+I2 = imread("n2.jpg");
+% RGB/gray to  binary conversion
+I3 = im2bw(I1);
+I4 = im2bw(I2);
+i3 = imresize(I3,[100,100]);
+i4 = imresize(I4,[100,100]);
+% finding complement of an image 
+using logical NOT
+i5 = not(i3);
+figure(1);
+imshow(i5);
+i11 = imcomplement(i3)
+figure(11);
+imshow(i11);
+% LOGICAL 'AND' OPERATION ON IMAGES 
+to find common areas in images
+i6 = and(i3,i4);
+figure(2);
+imshow(i6);
+i12 = bitand(i3,i4);
+figure(12);
+imshow(i12);
+% LOGICAL 'OR' OPERATION ON IMAGES to add 
+Parts of one image with other
+i7 = or(i3,i4);
+figure(3);
+imshow(i7);
+i13 = bitor(i3,i4);
+figure(13);
+imshow(i13);
+% LOGICAL 'XOR' OPERATION ON IMAGES do detect chages in images
+i8 = xor(i3,i4);
+figure(4);
+imshow(i8);
+% LOGICAL 'NAND' OPERATION ON IMAGES to construct filtering masks
+i9 = not(and(i3,i4));
+figure(5);
+imshow(i9);
+% LOGICAL 'NOR' OPERATION ON IMAGES
+i10 = not(or(i3,i4));
+figure(6);
+imshow(i10);
+134170
